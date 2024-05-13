@@ -32,6 +32,12 @@ class OdometryNode:
         self.distanceLeft = 0
         self.distanceRight = 0
 
+         # Initialize last counts
+        self.lastCountL = 0
+        self.lastCountR = 0
+
+        
+
         rospy.Subscriber("right_ticks", Int16, self.calc_right)
         rospy.Subscriber("left_ticks", Int16, self.calc_left)
 
